@@ -1,0 +1,6 @@
+# Claude Code / AI tooling scaffolding (not site content)
+.claude/
+.agents/
+.codex/
+.impeccable/
+skills-lock.json

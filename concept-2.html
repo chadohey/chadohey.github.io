@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>[여기에 입력] — Portfolio Poster</title>
+<meta name="description" content="[여기에 입력]의 연구 및 프로젝트 포트폴리오 — 컨퍼런스 포스터 형식.">
+<meta name="theme-color" content="#14213d">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2314213d'/%3E%3Crect x='6' y='6' width='9' height='9' fill='%230b6e68'/%3E%3Crect x='17' y='6' width='9' height='9' fill='%23a83a0c'/%3E%3Crect x='6' y='17' width='9' height='9' fill='%234a2a86'/%3E%3Crect x='17' y='17' width='9' height='9' fill='%23a9780f'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#14213d;
+    --wall:#e7e9ee;
+    --paper:#ffffff;
+    --ink:#1c1a15;
+    --ink-dim:#4a4739;
+    --teal:#0b6e68;
+    --rust:#a83a0c;
+    --violet:#4a2a86;
+    --gold:#8a6410;
+    color-scheme: light;
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ background:var(--wall); }
+  body{
+    margin:0;
+    background:var(--wall);
+    color:var(--ink-dim);
+    font-family:"Archivo", "Helvetica Neue", Arial, sans-serif;
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,p,ul,dl{ margin:0; }
+
+  a{ color:var(--navy); text-decoration-thickness:2px; text-underline-offset:.18em; font-weight:700; }
+  a:hover,a:focus-visible{ color:var(--rust); }
+  :focus-visible{ outline:3px solid var(--navy); outline-offset:3px; }
+  ::selection{ background:var(--navy); color:#fff; }
+
+  ::-webkit-scrollbar{ width:12px; }
+  ::-webkit-scrollbar-track{ background:var(--paper); }
+  ::-webkit-scrollbar-thumb{ background:var(--navy); border:3px solid var(--paper); }
+  html{ scrollbar-color:var(--navy) var(--paper); scrollbar-width:thin; }
+
+  .band{
+    background:var(--navy);
+    color:#fff;
+    padding:clamp(2.5rem,7vw,4.5rem) clamp(1.25rem,5vw,3rem) clamp(2.75rem,6vw,4rem);
+    text-align:center;
+    position:relative;
+  }
+  .band h1{
+    font-size:clamp(2.4rem,7.5vw,4.75rem);
+    font-weight:900;
+    letter-spacing:-.01em;
+    text-transform:uppercase;
+    word-break:keep-all;
+  }
+  .band .tagline{
+    margin-top:1rem;
+    font-size:clamp(1.05rem,2.4vw,1.4rem);
+    font-weight:500;
+    color:#cfd7e8;
+  }
+  .jump{
+    display:flex; justify-content:center; gap:1.25rem; flex-wrap:wrap;
+    margin-top:1.75rem;
+    font-size:.85rem;
+  }
+  .jump a{ color:#fff; font-weight:700; text-decoration:none; border-bottom:2px solid rgba(255,255,255,.35); padding-bottom:2px; }
+  .jump a:hover,.jump a:focus-visible{ border-color:#fff; color:#fff; }
+
+  main{
+    max-width:78rem;
+    margin-inline:auto;
+    padding:clamp(1.5rem,4vw,3rem);
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    grid-template-areas:
+      "research research research"
+      "p1 p2 p3"
+      "contact contact contact";
+    gap:clamp(1.25rem,2.5vw,2rem);
+  }
+  #research{ grid-area:research; }
+  #proj-a{ grid-area:p1; }
+  #proj-b{ grid-area:p2; }
+  #proj-c{ grid-area:p3; }
+  #contact{ grid-area:contact; }
+
+  .panel{
+    background:color-mix(in srgb, var(--accent,var(--navy)) 5%, #fff);
+    border:1px solid rgba(20,33,61,.14);
+    box-shadow:0 1px 2px rgba(20,33,61,.06), 0 18px 34px -22px rgba(20,33,61,.4);
+    padding:clamp(1.75rem,2.8vw,2.25rem);
+    position:relative;
+    opacity:0; transform:translateY(14px) scale(.98);
+    animation:pop .5s cubic-bezier(.2,.7,.25,1) forwards;
+    animation-delay:var(--d,0s);
+  }
+  @media (prefers-reduced-motion:reduce){
+    .panel{ opacity:1; transform:none; animation:none; }
+  }
+  @keyframes pop{ to{ opacity:1; transform:none; } }
+
+  #research{ --accent:var(--navy); --d:.05s; }
+  #proj-a{ --accent:var(--teal); --d:.15s; }
+  #proj-b{ --accent:var(--rust); --d:.22s; }
+  #proj-c{ --accent:var(--violet); --d:.29s; }
+  #contact{ --accent:var(--gold); --d:.36s; }
+
+  .panel h2,.panel h3{
+    display:flex; align-items:baseline; gap:.65rem;
+    color:var(--ink); letter-spacing:-.005em;
+  }
+  .panel h2{ font-size:1.65rem; font-weight:800; margin-bottom:1rem; }
+  .panel h3{ font-size:1.15rem; font-weight:800; margin-bottom:.6rem; }
+
+  .num{
+    flex:none;
+    font-size:.62em; font-weight:800; letter-spacing:.04em;
+    color:var(--accent,var(--navy));
+    background:color-mix(in srgb, var(--accent,var(--navy)) 12%, #fff);
+    padding:.2em .5em;
+  }
+  .panel p{ margin-bottom:.75rem; }
+  .panel p:last-child{ margin-bottom:0; }
+
+  #research ul{ list-style:none; padding:0; display:grid; gap:.55rem; }
+  #research li{
+    padding-left:1.4rem; position:relative;
+  }
+  #research li::before{
+    content:"■"; position:absolute; left:0; top:.15em;
+    color:var(--navy); font-size:.62em;
+  }
+
+  .stackline{ font-size:.85rem; color:var(--ink-dim); }
+  .stackline .k{ font-weight:800; color:var(--accent,var(--navy)); text-transform:uppercase; font-size:.72rem; letter-spacing:.05em; margin-right:.4em; }
+
+  .panel--link{ display:block; text-decoration:none; }
+  .panel--link:hover,.panel--link:focus-visible{
+    transform:translateY(-5px);
+    box-shadow:0 4px 8px rgba(20,33,61,.08), 0 28px 44px -20px rgba(20,33,61,.42);
+  }
+  .panel--link{ transition:transform .18s ease, box-shadow .18s ease; }
+  .panel--link h3{ color:var(--ink); }
+
+  #contact dl{ display:grid; gap:.65rem; }
+  #contact .row{ display:flex; gap:.75rem; align-items:baseline; flex-wrap:wrap; }
+  #contact dt{ font-weight:800; color:var(--ink); width:6rem; flex:none; }
+  #contact dd{ margin:0; }
+  #contact dd a{ color:var(--gold); }
+
+  .poster-footer{
+    text-align:center;
+    padding:2.5rem 1rem calc(2.5rem + env(safe-area-inset-bottom,0px));
+    font-size:.8rem;
+    color:var(--ink-dim);
+  }
+
+  @media (max-width:860px){
+    .grid{
+      grid-template-columns:1fr;
+      grid-template-areas:
+        "research"
+        "p1"
+        "p2"
+        "p3"
+        "contact";
+    }
+  }
+</style>
+</head>
+<body>
+
+  <header class="band">
+    <h1>[여기에 입력]</h1>
+    <p class="tagline">[여기에 입력 — 한 줄 소개]</p>
+    <nav class="jump" aria-label="주요 섹션 바로가기">
+      <a href="#research">Research</a>
+      <a href="#proj-a">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="grid">
+
+      <section id="research" class="panel" aria-labelledby="research-h">
+        <h2 id="research-h"><span class="num">01</span>Research Interests</h2>
+        <ul>
+          <li>[여기에 입력]</li>
+          <li>[여기에 입력]</li>
+          <li>[여기에 입력]</li>
+          <li>[여기에 입력]</li>
+        </ul>
+      </section>
+
+      <article id="proj-a" class="panel" aria-labelledby="proj-a-h">
+        <h3 id="proj-a-h"><span class="num">02</span>[여기에 입력]</h3>
+        <p>[여기에 입력]</p>
+        <p class="stackline"><span class="k">Stack</span>[여기에 입력]</p>
+        <p class="stackline"><span class="k">Link</span><a href="#">[여기에 입력]</a></p>
+      </article>
+
+      <article id="proj-b" class="panel" aria-labelledby="proj-b-h">
+        <h3 id="proj-b-h"><span class="num">03</span>[여기에 입력]</h3>
+        <p>[여기에 입력]</p>
+        <p class="stackline"><span class="k">Stack</span>[여기에 입력]</p>
+        <p class="stackline"><span class="k">Link</span><a href="#">[여기에 입력]</a></p>
+      </article>
+
+      <article id="proj-c" class="panel" aria-labelledby="proj-c-h">
+        <h3 id="proj-c-h"><span class="num">04</span>[여기에 입력]</h3>
+        <p>[여기에 입력]</p>
+        <p class="stackline"><span class="k">Stack</span>[여기에 입력]</p>
+        <p class="stackline"><span class="k">Link</span><a href="#">[여기에 입력]</a></p>
+      </article>
+
+      <section id="contact" class="panel" aria-labelledby="contact-h">
+        <h2 id="contact-h"><span class="num">05</span>Contact</h2>
+        <dl>
+          <div class="row"><dt>Email</dt><dd><a href="#">[여기에 입력]</a></dd></div>
+          <div class="row"><dt>GitHub</dt><dd><a href="#">[여기에 입력]</a></dd></div>
+          <div class="row"><dt>LinkedIn</dt><dd><a href="#">[여기에 입력]</a></dd></div>
+        </dl>
+      </section>
+
+    </div>
+  </main>
+
+  <p class="poster-footer">[여기에 입력] · Portfolio Poster · <span id="year"></span></p>
+
+<script>
+  var y = document.getElementById('year');
+  if (y) { y.textContent = new Date().getFullYear(); }
+</script>
+</body>
+</html>
