@@ -152,13 +152,16 @@
   .stackline{ font-size:.85rem; color:var(--ink-dim); }
   .stackline .k{ font-weight:800; color:var(--accent,var(--navy)); text-transform:uppercase; font-size:.72rem; letter-spacing:.05em; margin-right:.4em; }
 
-  .panel--link{ display:block; text-decoration:none; }
+  .panel--link{
+    display:block; text-decoration:none; color:var(--ink-dim); font-weight:400;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
   .panel--link:hover,.panel--link:focus-visible{
     transform:translateY(-5px);
     box-shadow:0 4px 8px rgba(20,33,61,.08), 0 28px 44px -20px rgba(20,33,61,.42);
   }
-  .panel--link{ transition:transform .18s ease, box-shadow .18s ease; }
-  .panel--link h3{ color:var(--ink); }
+  .panel--link h3{ color:var(--ink); text-decoration:underline; text-decoration-color:transparent; text-underline-offset:.2em; transition:text-decoration-color .18s ease; }
+  .panel--link:hover h3,.panel--link:focus-visible h3{ text-decoration-color:var(--accent,var(--navy)); }
 
   #contact dl{ display:grid; gap:.65rem; }
   #contact .row{ display:flex; gap:.75rem; align-items:baseline; flex-wrap:wrap; }
@@ -212,26 +215,26 @@
         </ul>
       </section>
 
-      <article id="proj-a" class="panel" aria-labelledby="proj-a-h">
-        <h3 id="proj-a-h"><span class="num">02</span>저자원 한국어·일본어 LLM을 위한 PEFT 기법 비교 연구</h3>
+      <a id="proj-a" class="panel panel--link" href="projects/project-a.html" aria-label="저자원 한국어·일본어 LLM을 위한 PEFT 기법 비교 연구 — 상세 보기">
+        <h3><span class="num">02</span>저자원 한국어·일본어 LLM을 위한 PEFT 기법 비교 연구</h3>
         <p>Qwen2.5-1.5B를 기반으로 QLoRA, DoRA와 제안 기법 DuDe(DoRA + PiSSA 초기화 결합)를 비교해 저자원 언어 환경에서 더 효율적인 파인튜닝 방법을 탐색</p>
         <p class="stackline"><span class="k">Stack</span>PyTorch, Hugging Face, QLoRA, DoRA, PiSSA</p>
         <p class="stackline"><span class="k">Status</span>연구 진행 중</p>
-      </article>
+      </a>
 
-      <article id="proj-b" class="panel" aria-labelledby="proj-b-h">
-        <h3 id="proj-b-h"><span class="num">03</span>머신러닝 기반 광대역 GaN LNA 온도별 성능 예측</h3>
+      <a id="proj-b" class="panel panel--link" href="projects/project-b.html" aria-label="머신러닝 기반 광대역 GaN LNA 온도별 성능 예측 — 상세 보기">
+        <h3><span class="num">03</span>머신러닝 기반 광대역 GaN LNA 온도별 성능 예측</h3>
         <p>전자공학과와의 공동 연구 프로젝트. 온도 변화에 따른 저잡음 증폭기(LNA)의 성능을 예측하는 ML·통계 모델링 파트 담당</p>
         <p class="stackline"><span class="k">Stack</span>Python, 회귀 모델링, 머신러닝</p>
         <p class="stackline"><span class="k">Status</span>공동 논문 작성 중</p>
-      </article>
+      </a>
 
-      <article id="proj-c" class="panel" aria-labelledby="proj-c-h">
-        <h3 id="proj-c-h"><span class="num">04</span>MMPDS 기준 항공우주 소재(17-4PH) 허용 강도 산출 통계 방법론</h3>
+      <a id="proj-c" class="panel panel--link" href="projects/project-c.html" aria-label="MMPDS 기준 항공우주 소재(17-4PH) 허용 강도 산출 통계 방법론 — 상세 보기">
+        <h3><span class="num">04</span>MMPDS 기준 항공우주 소재(17-4PH) 허용 강도 산출 통계 방법론</h3>
         <p>항공우주 소재 설계 허용치(T99/T90) 산출을 위한 통계 방법론 연구. 분포 적합, Anderson-Darling 적합도 검정, 최대우도추정, 로트 단위 군집 데이터 보정(설계효과·베이지안 계층모형) 방법 비교</p>
         <p class="stackline"><span class="k">Stack</span>통계 모델링, MLE, 베이지안 계층모형, R/Python</p>
         <p class="stackline"><span class="k">Status</span>2026년 10월 대한금속·재료학회 추계학술대회 발표 예정 (연구실)</p>
-      </article>
+      </a>
 
       <section id="contact" class="panel" aria-labelledby="contact-h">
         <h2 id="contact-h"><span class="num">05</span>Contact</h2>
