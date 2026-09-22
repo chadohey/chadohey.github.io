@@ -147,17 +147,17 @@
 
       <section class="panel" aria-labelledby="problem-h">
         <h2 id="problem-h"><span class="num">01</span>문제</h2>
-        <p>저자원 언어(한국어·일본어) 환경에서는 대형 언어모델을 효율적으로 파인튜닝하기 어렵다는 문제가 있다.</p>
+        <p>한국어·일본어처럼 학습 데이터가 적은 언어에서는 LLM 전체를 파인튜닝하기 어렵고, 적은 파라미터만 학습하는 PEFT 기법 중 어떤 방법이 더 효율적인지 명확하지 않다.</p>
       </section>
 
       <section class="panel" aria-labelledby="method-h">
         <h2 id="method-h"><span class="num">02</span>방법</h2>
-        <p>Qwen2.5-1.5B를 기반으로 QLoRA, DoRA와 제안 기법 DuDe(DoRA + PiSSA 초기화 결합)를 비교해 저자원 언어 환경에서 더 효율적인 파인튜닝 방법을 탐색.</p>
+        <p>Qwen2.5-1.5B를 기반 모델로 QLoRA, DoRA, 그리고 DoRA에 PiSSA의 SVD 기반 초기화를 결합한 제안 기법 DuDe를 같은 조건에서 비교.</p>
       </section>
 
       <section class="panel" aria-labelledby="result-h">
         <h2 id="result-h"><span class="num">03</span>결과 · 진행 상황</h2>
-        <p>연구 진행 중</p>
+        <p>학습 초기 단계의 수렴 속도(약 200 step 시점의 Perplexity) 지표 분석과 DuDe의 SVD 초기화 구현 검증을 진행 중.</p>
       </section>
 
       <section class="panel" aria-labelledby="stack-h">
